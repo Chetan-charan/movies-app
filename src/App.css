@@ -1,38 +1,120 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: space-between;
+    background-color: #1b1b1f;
+
+
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    background-color: #B10000;
+    width: 100vw;
+    height: 60px;
+    color: white;
+    padding-left: 44%;
+    letter-spacing: 5px;
+    padding-top: 6px;
+    font-family: ff-din-web,Calibri,Arial,sans-serif;
+    top:0%;
+    position: sticky;
+    z-index: 10;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movi-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content-movie {
+    font-family: 'Great Vibes', cursive;
+    font-size: 23px;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.content-movie-desc {
+    font-family: 'Great Vibes', cursive;
+    font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    max-width: 350px;
+    color: white;
+    
+    
 }
+.one-movi {
+    width: 350px;
+    overflow: hidden;
+    padding-right: 0%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+ 
+
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+
+border: 1px solid rgba( 255, 255, 255, 0.18 ); 
+    margin: 2rem;
+    border-radius: 10px;
+   
+}
+
+.mv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-poster {
+    height: 425px;
+    width: 350px;
+   
+    object-fit: cover;
+}
+
+button {
+    margin: 5px;
+    
+}
+
+.show-button {
+    opacity: 0;
+
+}
+
+.Add-color {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+    margin-left: 20px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    
+}
+
+.one-movi:hover .show-button {
+    opacity: 1;
+    transform: translate(10px);
+    transition: 0.5s;
+}
+
+.one-movi:hover {
+    transform: scale(1.05);
+}
+
