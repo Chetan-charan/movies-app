@@ -66,31 +66,13 @@ function App() {
   ]);
 
 
-  const [Name,setMovie] = useState('');
-  const [Rating,setRating] = useState('');
-  const [summary,setDesc] = useState('');
-  const [poster,setPic] = useState('');
-  const [showAdd,setShowAdd] = useState(false);
-  const addStyles = { display: showAdd ? 'block':'none' }
-  const addStyles2 = { display: showAdd ? 'none':'block', width: '200px', marginLeft:'5rem' }
+ 
   return (
     <div className="App">
       <div className='header'>
         <h1>MOVIES</h1>
       </div>
-      <button style={addStyles2} className='btn btn-primary btn-lg' onClick={() => { setShowAdd(true)}}>New Movie </button>
-      <div style={addStyles}  >
-        <div className='add-fields' >
-    <TextField onChange={(event) => setMovie(event.target.value)}  id="standard-basic" label="Movie" variant="standard" />
-    <TextField onChange={(event) => setRating(event.target.value)} id="standard-basic" label="Rating" variant="standard" />
-    <TextField onChange={(event) => setDesc(event.target.value)} id="standard-basic" label="Summary" variant="standard" />
-    <TextField onChange={(event) => setPic(event.target.value)} id="standard-basic" label="Poster url" variant="standard" />
-    <Button onClick={() => {
-      setMovies([...movies, {Name,Rating,summary,poster}]);
-      setShowAdd(false);
-      }} variant="outlined">Add Movie</Button>
-      </div>
-      </div>
+      <AddMovie movies={movies} setMovies={setMovies}/>
       <div className='movi-list'>
 
       {movies.map(({Name,poster,Rating,summary}) => 
@@ -107,7 +89,30 @@ function App() {
   );
 }
 
-
+function AddMovie({movies,setMovies}){
+  const [Name,setMovie] = useState('');
+  const [Rating,setRating] = useState('');
+  const [summary,setDesc] = useState('');
+  const [poster,setPic] = useState('');
+  const [showAdd,setShowAdd] = useState(false);
+  const addStyles = { display: showAdd ? 'block':'none' }
+  const addStyles2 = { display: showAdd ? 'none':'block', width: '200px', marginLeft:'5rem' }
+  return <div>
+      <button style={addStyles2} className='btn btn-primary btn-lg' onClick={() => { setShowAdd(true)}}>New Movie </button>
+      <div style={addStyles}  >
+        <div className='add-fields' >
+    <TextField onChange={(event) => setMovie(event.target.value)}  id="standard-basic" label="Movie" variant="standard" />
+    <TextField onChange={(event) => setRating(event.target.value)} id="standard-basic" label="Rating" variant="standard" />
+    <TextField onChange={(event) => setDesc(event.target.value)} id="standard-basic" label="Summary" variant="standard" />
+    <TextField onChange={(event) => setPic(event.target.value)} id="standard-basic" label="Poster url" variant="standard" />
+    <Button onClick={() => {
+      setMovies([...movies, {Name,Rating,summary,poster}]);
+      setShowAdd(false);
+      }} variant="outlined">Add Movie</Button>
+      </div>
+      </div>
+      </div>
+}
 
 
 

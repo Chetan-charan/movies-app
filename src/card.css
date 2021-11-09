@@ -44,10 +44,32 @@
     margin: 0 1rem 1rem;
   }
 
- section {
+  .card-list {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
     background: #007bff;
     background: linear-gradient(to right, #0062E6, #33AEFF);
+  }
+
+
+ section {
+    
     height: 100vh;
     margin-top: 0%;
   
   }
+
+@media (min-width: 750px) {
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1050px) {
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
